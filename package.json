@@ -1,6 +1,6 @@
 {
   "name": "@aquarela/jwt-signer",
-  "version": "1.6.1",
+  "version": "1.6.2",
   "description": "Sign JWT Token with any Signature algorithm key.",
   "repository": "https://github.com/aquarela-io/jwt-signer",
   "main": "lib/index.js",
@@ -10,15 +10,11 @@
   "devDependencies": {
     "@types/jsonwebtoken": "^8.5.1",
     "@types/node": "^15.0.2",
-    "@types/styled-components": "^5.1.9",
     "@typescript-eslint/eslint-plugin": "^4.23.0",
     "@typescript-eslint/parser": "^4.23.0",
     "eslint": "^7.26.0",
     "eslint-config-prettier": "^8.3.0",
-    "eslint-plugin-jsx-a11y": "^6.4.1",
     "eslint-plugin-prettier": "^3.4.0",
-    "eslint-plugin-react": "^7.23.2",
-    "eslint-plugin-react-hooks": "^4.2.0",
     "eslint-plugin-simple-import-sort": "^7.0.0",
     "prettier": "^2.3.0",
     "typescript": "^4.2.4"
@@ -32,5 +28,6 @@
   "dependencies": {
     "jsonwebtoken": "^8.5.1"
   },
+  "files": ["lib/**/*"],
   "keywords": ["jwt", "signer", "aquarela"]
 }

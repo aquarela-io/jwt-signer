@@ -25,7 +25,7 @@ type ErrorProps = {
 }
 
 function __handleError({ err, message }: ErrorProps) {
-    const provider = '[ aquarela-jwt-signer ] Error: '
+    const provider = '[ jwt-signer ] Error: '
     throw new Error(provider + ' ' + message || err)
     return 'error'
 }

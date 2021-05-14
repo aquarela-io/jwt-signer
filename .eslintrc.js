@@ -3,15 +3,7 @@ module.exports = {
     parser: '@typescript-eslint/parser',
     parserOptions: {
         ecmaVersion: 2020,
-        sourceType: 'module',
-        ecmaFeatures: {
-            jsx: true
-        }
-    },
-    settings: {
-        react: {
-            version: 'detect'
-        }
+        sourceType: 'module'
     },
     env: {
         browser: true,
@@ -23,7 +15,7 @@ module.exports = {
         'eslint:recommended',
         'plugin:@typescript-eslint/eslint-recommended',
         'plugin:@typescript-eslint/recommended',
-        'plugin:prettier/recommended' // Make sure this is always the last element in the array.
+        'plugin:prettier/recommended'
     ],
     rules: {
         '@typescript-eslint/explicit-function-return-type': 'off',

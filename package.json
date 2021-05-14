@@ -1,6 +1,6 @@
 {
   "name": "@aquarela/jwt-signer",
-  "version": "1.6.3",
+  "version": "1.6.4",
   "description": "Sign JWT Token with any Signature algorithm key.",
   "repository": "https://github.com/aquarela-io/jwt-signer",
   "main": "lib/index.js",

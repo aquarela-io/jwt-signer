@@ -37,19 +37,46 @@
 
 ### 🏠 [Homepage](https://aquarela.io)
 
-  
+## Updates
 
+    #1.6.6
+    
+    Now it verifies if token is valid and return an JSON object or a error (that may be expiration, invalid algorithm, payload and etc.)
+    example output:
+
+    ```js
+    {
+        valid: true,
+        payload: { sub: '94828482248', name: 'The Dude', iat: 1516239022 },
+        token: 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpX(...)Eo-PAyF1xJWxYFSnw'
+    }
+    ```
 ## Install
 
-```sh
-#yarn
-yarn add @aquarela/jwt-signer   
+    ## NPM
 
-#npm
-npm -i @aquarela/jwt-signer
+    ```sh
+    #yarn
+    yarn add @aquarela/jwt-signer   
 
- 
-```
+    #npm
+    npm -i @aquarela/jwt-signer
+
+    
+    ```
+
+    ## CDN
+    
+
+    ```sh
+    #unpkg
+    https://unpkg.com/@aquarela/jwt-signer@1.6.5/lib/index.js 
+
+    #jsdeliver
+    https://cdn.jsdelivr.net/npm/@aquarela/jwt-signer
+
+    
+    ```
 
 ## Usage
   
@@ -66,7 +93,13 @@ iat:  1516239022
 
 console.log(jwtSign({keyPath:  './private.pem', payload:  data}))
 
-// output: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiI5NDgy(...)
+// output: 
+//
+// {
+//   valid: true,
+//   payload: { sub: '94828482248', name: 'The Dude', iat: 1516239022 },
+//   token: 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpX(...)Eo-PAyF1xJWxYFSnw'
+// }
  
 ```
 
@@ -84,8 +117,14 @@ import { jwtSign } from  '@aquarela/jwt-signer' // Import the package
 console.log(jwtSign({
 			keyPath:  './private.pem', // private key file on the root folder.
 			(...)}))
-
-// output: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiI5NDgy(...)
+// output: 
+//
+// {
+//   valid: true,
+//   payload: { sub: '94828482248', name: 'The Dude', iat: 1516239022 },
+//   token: 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpX(...)Eo-PAyF1xJWxYFSnw'
+// }
+ 
  
 ```
 
@@ -111,7 +150,14 @@ console.log(jwtSign({
 	(...)
 }))
  
-// output: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiI5NDgy(...)
+// output: 
+//
+// {
+//   valid: true,
+//   payload: { sub: '94828482248', name: 'The Dude', iat: 1516239022 },
+//   token: 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpX(...)Eo-PAyF1xJWxYFSnw'
+// }
+ 
 ```
 
 #### payload (@object) *required 
@@ -127,8 +173,14 @@ const data =  { sub:  "94828482248", name:  "The Dude", iat:  1516239022 }
 (...)
 console.log(jwtSign({(...)
 			payload:  data}))
-
-// output: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiI5NDgy(...)
+// output: 
+//
+// {
+//   valid: true,
+//   payload: { sub: '94828482248', name: 'The Dude', iat: 1516239022 },
+//   token: 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpX(...)Eo-PAyF1xJWxYFSnw'
+// }
+ 
 ```
 
 #### options (@object) *required 
@@ -164,7 +216,14 @@ const  options  = {
 console.log(jwtSign({(...)
 			options:  options}))
 
-// output: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiI5NDgy(...)
+// output: 
+//
+// {
+//   valid: 'yes',
+//   payload: { sub: '94828482248', name: 'The Dude', iat: 1516239022 },
+//   token: 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpX(...)Eo-PAyF1xJWxYFSnw'
+// }
+ 
 ```
 
 Thats it.

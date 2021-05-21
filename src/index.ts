@@ -1,7 +1,9 @@
 import * as fs from 'fs'
 import * as jwt from 'jsonwebtoken'
 
-type JwtProps = {
+import * as pkgjson from '../package.json'
+
+export type JwtProps = {
     keyPath: string
     payload: {
         [key: number]: string
@@ -46,7 +48,7 @@ type ErrorProps = {
 }
 
 function __handleError({ err, message }: ErrorProps) {
-    const provider = '[ jwt-signer ] Error: '
+    const provider = '[ ' + pkgjson.name + ' ] Error: '
     throw new Error(provider + ' ' + message || err)
     return provider
 }

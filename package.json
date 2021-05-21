@@ -35,5 +35,8 @@
     "jwt",
     "signer",
     "aquarela"
-  ]
+  ],
+  "publishConfig": {
+    "registry": "https://npm.pkg.github.com/@aquarela-io"
+  }
 }

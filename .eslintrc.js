@@ -1,9 +1,10 @@
 module.exports = {
     root: true,
     parser: '@typescript-eslint/parser',
-    parserOptions: {
+    compilerOptions: {
         ecmaVersion: 2020,
-        sourceType: 'module'
+        sourceType: 'module',
+        resolveJsonModule: true
     },
     env: {
         browser: true,

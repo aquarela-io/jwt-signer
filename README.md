@@ -1,33 +1,65 @@
 
+  
+
 <h1  align="center">Welcome to @aquarela/jwt-signer 👋</h1>
+
+  
 
 <p>
 
+  
+
 <a  href="https://www.npmjs.com/package/@aquarela/jwt-signer"  target="_blank">
+
+  
 
 <img  alt="Version"  src="https://img.shields.io/npm/v/@aquarela/jwt-signer.svg">
 
+  
+
 </a>
+
+  
 
 <a  href="https://github.com/aquarela-io/jwt-signer#readme"  target="_blank">
 
+  
+
 <img  alt="Documentation"  src="https://img.shields.io/badge/documentation-yes-brightgreen.svg" />
 
+  
+
 </a>
+
+  
 
 <a  href="#"  target="_blank">
 
+  
+
 <img  alt="License: MIT"  src="https://img.shields.io/badge/License-MIT-yellow.svg" />
 
+  
+
 </a>
+
+  
 
 <a  href="https://twitter.com/aquarela_io"  target="_blank">
 
+  
+
 <img  alt="Twitter: aquarela_io"  src="https://img.shields.io/twitter/follow/aquarela_io.svg?style=social" />
+
+  
 
 </a>
 
+  
+
 </p>
+
+  
 
   
 
@@ -35,199 +67,370 @@
 
   
 
+  
+
 ### 🏠 [Homepage](https://aquarela.io)
+
+  
 
 ## Updates
 
-    #1.6.6
-    
-    Now it verifies if token is valid and return an JSON object or a error (that may be expiration, invalid algorithm, payload and etc.)
-    example output:
+**1.6.7**
+    fixes problems which may occur within TypeScript
 
-    ```js
-    {
-        valid: true,
-        payload: { sub: '94828482248', name: 'The Dude', iat: 1516239022 },
-        token: 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpX(...)Eo-PAyF1xJWxYFSnw'
-    }
-    ```
+**1.6.6**
+
+  
+
+Now it verifies if token is valid and return an JSON object or a error (that may be expiration, invalid algorithm, payload and etc.)
+
+example output:
+
+  
+
+```js
+
+{
+
+valid: true,
+
+payload: { sub: '94828482248', name: 'The Dude', iat: 1516239022 },
+
+token: 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpX(...)Eo-PAyF1xJWxYFSnw'
+
+}
+
+```
+
 ## Install
 
-    ## NPM
+  
 
-    ```sh
-    #yarn
-    yarn add @aquarela/jwt-signer   
+## NPM
 
-    #npm
-    npm -i @aquarela/jwt-signer
+  
 
-    
-    ```
+```sh
 
-    ## CDN
-    
+#yarn
 
-    ```sh
-    #unpkg
-    https://unpkg.com/@aquarela/jwt-signer@1.6.5/lib/index.js 
+yarn add @aquarela/jwt-signer
 
-    #jsdeliver
-    https://cdn.jsdelivr.net/npm/@aquarela/jwt-signer
+  
 
-    
-    ```
+#npm
+
+npm -i @aquarela/jwt-signer
+
+  
+
+```
+
+  
+
+## CDN
+
+  
+
+```sh
+
+#unpkg
+
+https://unpkg.com/@aquarela/jwt-signer@1.6.5/lib/index.js
+
+  
+
+#jsdeliver
+
+https://cdn.jsdelivr.net/npm/@aquarela/jwt-signer
+
+  
+
+```
+
+  
 
 ## Usage
-  
-  You need only the private key (as file using **keyPath** or raw using **inline** argument)
-  
- ```js
-import { jwtSign } from  '@aquarela/jwt-signer' // Import the package
 
-const  data  = {
+You need only the private key (as file using **keyPath** or raw using **inline** argument)
+
+```js
+
+import { jwtSign } from  '@aquarela/jwt-signer'  // Import the package
+
+  
+
+const data = {
+
 sub:  "94828482248",
+
 name:  "The Dude",
+
 iat:  1516239022
+
 } // Create Payload Data
 
-console.log(jwtSign({keyPath:  './private.pem', payload:  data}))
+  
 
-// output: 
+console.log(jwtSign({keyPath:  './private.pem', payload: data}))
+
+  
+
+// output:
+
 //
+
 // {
-//   valid: true,
-//   payload: { sub: '94828482248', name: 'The Dude', iat: 1516239022 },
-//   token: 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpX(...)Eo-PAyF1xJWxYFSnw'
+
+// valid: true,
+
+// payload: { sub: '94828482248', name: 'The Dude', iat: 1516239022 },
+
+// token: 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpX(...)Eo-PAyF1xJWxYFSnw'
+
 // }
- 
+
 ```
+
+  
 
 ### Options
 
+  
+
 There 4 argument on **jwtSign**: *keyPath or inline* (required), *payload* (required) and *options*.
+
+  
 
 #### keyPath (@string) *required (can be swapped with inline argument)
 
+  
+
 keyPath support local or external paths of your private key.
+
 ```js
-import { jwtSign } from  '@aquarela/jwt-signer' // Import the package
+
+import { jwtSign } from  '@aquarela/jwt-signer'  // Import the package
+
+  
 
 (...)
+
 console.log(jwtSign({
-			keyPath:  './private.pem', // private key file on the root folder.
-			(...)}))
-// output: 
+
+keyPath:  './private.pem', // private key file on the root folder.
+
+(...)}))
+
+// output:
+
 //
+
 // {
-//   valid: true,
-//   payload: { sub: '94828482248', name: 'The Dude', iat: 1516239022 },
-//   token: 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpX(...)Eo-PAyF1xJWxYFSnw'
+
+// valid: true,
+
+// payload: { sub: '94828482248', name: 'The Dude', iat: 1516239022 },
+
+// token: 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpX(...)Eo-PAyF1xJWxYFSnw'
+
 // }
- 
- 
+
 ```
+
+  
 
 #### inline (@string) *required (can be swapped with keyPath argument)
 
+  
+
 inline support raw private key data.
+
 ```js
+
 import { jwtSign } from  '@aquarela/jwt-signer'
 
+  
+
 (...)
 
-const  rawData  =  `-----BEGIN RSA PRIVATE KEY-----
+  
+
+const rawData =  `-----BEGIN RSA PRIVATE KEY-----
+
 MIICXQIBAAKBgQDUi8T6pRUhWdA+g8hlebFMzRRoM0MCnqMoHg/IEmd0pY1t9O0J
+
 oDLXCcCEguTJaaw73y7TwHERgxE1Ma/mExIQtMTgrpVBgVCOw1tsz5Kf7xGNXH5f
+
 (...)
+
 -----END RSA PRIVATE KEY-----`
 
   
 
+  
+
 console.log(jwtSign({
-	keyPath:  '',
-	inline:  rawData,
-	(...)
+
+keyPath:  '',
+
+inline: rawData,
+
+(...)
+
 }))
- 
-// output: 
+
+// output:
+
 //
+
 // {
-//   valid: true,
-//   payload: { sub: '94828482248', name: 'The Dude', iat: 1516239022 },
-//   token: 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpX(...)Eo-PAyF1xJWxYFSnw'
+
+// valid: true,
+
+// payload: { sub: '94828482248', name: 'The Dude', iat: 1516239022 },
+
+// token: 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpX(...)Eo-PAyF1xJWxYFSnw'
+
 // }
- 
+
 ```
 
-#### payload (@object) *required 
+  
 
-payload is the data  as JSON Object your gonna embed in your jwt token.
+#### payload (@object) *required
+
+  
+
+payload is the data as JSON Object your gonna embed in your jwt token.
+
 You can see an [example here](https://self-issued.info/docs/draft-ietf-oauth-json-web-token.html#ExampleJWT).
 
-```js
-import { jwtSign } from  '@aquarela/jwt-signer' // Import the package
+  
 
-const data =  { sub:  "94828482248", name:  "The Dude", iat:  1516239022 }
+```js
+
+import { jwtSign } from  '@aquarela/jwt-signer'  // Import the package
+
+  
+
+const data = { sub:  "94828482248", name:  "The Dude", iat:  1516239022 }
+
+  
 
 (...)
+
 console.log(jwtSign({(...)
-			payload:  data}))
-// output: 
+
+payload: data}))
+
+// output:
+
 //
+
 // {
-//   valid: true,
-//   payload: { sub: '94828482248', name: 'The Dude', iat: 1516239022 },
-//   token: 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpX(...)Eo-PAyF1xJWxYFSnw'
+
+// valid: true,
+
+// payload: { sub: '94828482248', name: 'The Dude', iat: 1516239022 },
+
+// token: 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpX(...)Eo-PAyF1xJWxYFSnw'
+
 // }
- 
+
 ```
 
-#### options (@object) *required 
+  
 
-payload is the data as JSON Object  you can configure some things as algorithm.
+#### options (@object) *required
+
+  
+
+payload is the data as JSON Object you can configure some things as algorithm.
+
+  
 
 ```js
-import { jwtSign } from  '@aquarela/jwt-signer' // Import the package
+
+import { jwtSign } from  '@aquarela/jwt-signer'  // Import the package
+
+  
 
 (...)
+
+  
 
 /**
 
+  
+
 * Signature algorithm. Could be one of these values :
+
 * - HS256: HMAC using SHA-256 hash algorithm (default)
+
 * - HS384: HMAC using SHA-384 hash algorithm
+
 * - HS512: HMAC using SHA-512 hash algorithm
+
 * - RS256: RSASSA using SHA-256 hash algorithm
+
 * - RS384: RSASSA using SHA-384 hash algorithm
+
 * - RS512: RSASSA using SHA-512 hash algorithm
+
 * - ES256: ECDSA using P-256 curve and SHA-256 hash algorithm
+
 * - ES384: ECDSA using P-384 curve and SHA-384 hash algorithm
+
 * - ES512: ECDSA using P-521 curve and SHA-512 hash algorithm
+
 * - none: No digital signature or MAC value included
+
+  
 
 */
 
-const  options  = {
-	algorithm:  'RS512'
+  
+
+const options = {
+
+algorithm:  'RS512'
+
 }
 
-(...)
-console.log(jwtSign({(...)
-			options:  options}))
+  
 
-// output: 
+(...)
+
+console.log(jwtSign({(...)
+
+options: options}))
+
+  
+
+// output:
+
 //
+
 // {
-//   valid: 'yes',
-//   payload: { sub: '94828482248', name: 'The Dude', iat: 1516239022 },
-//   token: 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpX(...)Eo-PAyF1xJWxYFSnw'
+
+// valid: 'yes',
+
+// payload: { sub: '94828482248', name: 'The Dude', iat: 1516239022 },
+
+// token: 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpX(...)Eo-PAyF1xJWxYFSnw'
+
 // }
- 
+
 ```
 
+  
+
 Thats it.
+
 ## Author
+
+  
 
   
 
@@ -235,11 +438,19 @@ Thats it.
 
   
 
+  
+
 * Website: https://aquarela.io
+
+  
 
 * Twitter: [@aquarela_io](https://twitter.com/aquarela_io)
 
+  
+
 * Github: [@aquarela-io](https://github.com/aquarela-io)
+
+  
 
   
 
@@ -247,7 +458,11 @@ Thats it.
 
   
 
+  
+
 Give a ⭐️ if this project helped you!
+
+  
 
   
 
